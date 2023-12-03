@@ -1,4 +1,4 @@
-﻿namespace AdventureOfCode._2023.Day01.Solution;
+﻿namespace AdventOfCode._2023.Day01.Solution;
 
 public static class Program
 {
