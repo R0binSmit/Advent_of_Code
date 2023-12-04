@@ -22,15 +22,13 @@ public static class Program
 
         foreach(string line in inputFileContent)
         {
-            char[] digits =  line.Where(char.IsDigit).ToArray();
+            int[] digits = line.GetDigits();
 
-            if(digits != Array.Empty<char>())
-            {
-                calibrationValue += Convert.ToInt32(
-                    digits.FirstOrDefault().ToString()
-                    + digits.LastOrDefault().ToString()
-                );
-            }
+            calibrationValue +=
+            Convert.ToInt32(
+                digits.FirstOrDefault().ToString()
+                + digits.LastOrDefault().ToString()
+            );
         }
 
         return calibrationValue;

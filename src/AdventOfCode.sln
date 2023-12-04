@@ -7,13 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2023", "2023", "{37B945C5-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day01", "Day01", "{7992B35E-FD01-4220-977E-7E03E860F434}"
 	ProjectSection(SolutionItems) = preProject
-		input.txt = input.txt
-		README.md = README.md
+		2023\Day01\README.md = 2023\Day01\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.2023.Day01.Solution", "2023\Day01\AdventOfCode.2023.Day01.Solution\AdventOfCode.2023.Day01.Solution.csproj", "{F1D47262-FC2A-49A1-A9ED-4AB5101D8EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.2023.Day01.Solution", "2023\Day01\AdventOfCode.2023.Day01.Solution\AdventOfCode.2023.Day01.Solution.csproj", "{F1D47262-FC2A-49A1-A9ED-4AB5101D8EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.2023.Day01.Tests", "2023\Day01\AdventOfCode.2023.Day01.Tests\AdventOfCode.2023.Day01.Tests.csproj", "{4494B89A-EFC8-4CFE-949E-7470716C3BA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.2023.Day01.Tests", "2023\Day01\AdventOfCode.2023.Day01.Tests\AdventOfCode.2023.Day01.Tests.csproj", "{4494B89A-EFC8-4CFE-949E-7470716C3BA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace AdventOfCode._2023.Day01.Tests;
 
-public class Tests
+public class CalculateCalibrationValue
 {
     [Test]
     public void CalculateCalibrationValue_BeginAndEndAreDigits_Return24()
