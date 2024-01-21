@@ -7,13 +7,10 @@ public class CalculateCalibrationValue
     [Test]
     public void CalculateCalibrationValue_BeginAndEndAreDigits_Return24()
     {
-        string[] inputData =
-        {
-            "2DE4",
-        };
+        var inputData = new[] { "2DE4" };
 
-        int calibrationValue = Solution.Program.getCalibrationValue(inputData);
-        Assert.IsTrue(calibrationValue == 24);
+        var calibrationValue = Solution.Program.GetCalibrationValue(inputData);
+        Assert.That(calibrationValue, Is.EqualTo(24));
     }
 
     [Test]
@@ -24,19 +21,16 @@ public class CalculateCalibrationValue
             "1"
         };
 
-        int calibrationValue = Solution.Program.getCalibrationValue(inputData);
-        Assert.IsTrue(calibrationValue == 11);
+        var calibrationValue = Solution.Program.GetCalibrationValue(inputData);
+        Assert.That(calibrationValue, Is.EqualTo(11));
     }
 
     [Test]
     public void CalculateCalibrationValue_NumbersInString_Return23()
     {
-        string[] inputData =
-        {
-            "BLA2DUDA3KI"
-        };
+        var inputData = new[] { "BLA2DUDA3KI" };
 
-        int calibrationValue = Solution.Program.getCalibrationValue(inputData);
-        Assert.IsTrue(calibrationValue == 23);
+        var calibrationValue = Solution.Program.GetCalibrationValue(inputData);
+        Assert.That(calibrationValue, Is.EqualTo(23));
     }
 }

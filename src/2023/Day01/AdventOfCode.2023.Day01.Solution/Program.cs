@@ -2,35 +2,25 @@
 
 public static class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        string[] inputFileContent = getInputFileContent();
-        int calibrationValue = getCalibrationValue(inputFileContent);
+        var inputFileContent = GetInputFileContent();
+        var calibrationValue = GetCalibrationValue(inputFileContent);
 
         Console.WriteLine($"CalibrationValue = {calibrationValue}");
     }
 
-    public static string[] getInputFileContent()
+    private static IEnumerable<string> GetInputFileContent()
     {
-        string inputFilePaht = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "input.txt");
+        var inputFilePaht = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "input.txt");
         return File.ReadAllLines(inputFilePaht);
     }
 
-    public static int getCalibrationValue(string[] inputFileContent)
+    public static int GetCalibrationValue(IEnumerable<string> inputFileContent)
     {
-        int calibrationValue = 0;
-
-        foreach(string line in inputFileContent)
-        {
-            int[] digits = line.GetDigits();
-
-            calibrationValue +=
-            Convert.ToInt32(
-                digits.FirstOrDefault().ToString()
-                + digits.LastOrDefault().ToString()
-            );
-        }
-
-        return calibrationValue;
+        return inputFileContent
+            .Select(line => line.GetDigits())
+            .Select(digits => Convert.ToInt32(digits.FirstOrDefault() + digits.LastOrDefault().ToString()))
+            .Sum();
     }
 }

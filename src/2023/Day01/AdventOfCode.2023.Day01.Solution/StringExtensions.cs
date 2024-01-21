@@ -2,47 +2,50 @@
 
 namespace AdventOfCode._2023.Day01.Solution;
 
-public static class StringExtensions
+public static partial class StringExtensions
 {
-    private static readonly string digitRegex = @"(?=(\d|zero|one|two|three|four|five|six|seven|eight|nine))";
-    private static readonly List<KeyValuePair<string, int>> digitsMappingList = new List<KeyValuePair<string, int>>() 
+    private static readonly List<KeyValuePair<string, int>> DigitsMappingList = new List<KeyValuePair<string, int>> 
     { 
-        new KeyValuePair<string, int>("zero", 0),
-        new KeyValuePair<string, int>("one", 1),
-        new KeyValuePair<string, int>("two", 2),
-        new KeyValuePair<string, int>("three", 3),
-        new KeyValuePair<string, int>("four", 4),
-        new KeyValuePair<string, int>("five", 5),
-        new KeyValuePair<string, int>("six", 6),
-        new KeyValuePair<string, int>("seven", 7),
-        new KeyValuePair<string, int>("eight", 8),
-        new KeyValuePair<string, int>("nine", 9),
+        new ("zero", 0),
+        new ("one", 1),
+        new ("two", 2),
+        new ("three", 3),
+        new ("four", 4),
+        new ("five", 5),
+        new ("six", 6),
+        new ("seven", 7),
+        new ("eight", 8),
+        new ("nine", 9),
 
-        new KeyValuePair<string, int>("0", 0),
-        new KeyValuePair<string, int>("1", 1),
-        new KeyValuePair<string, int>("2", 2),
-        new KeyValuePair<string, int>("3", 3),
-        new KeyValuePair<string, int>("4", 4),
-        new KeyValuePair<string, int>("5", 5),
-        new KeyValuePair<string, int>("6", 6),
-        new KeyValuePair<string, int>("7", 7),
-        new KeyValuePair<string, int>("8", 8),
-        new KeyValuePair<string, int>("9", 9),
+        new ("0", 0),
+        new ("1", 1),
+        new ("2", 2),
+        new ("3", 3),
+        new ("4", 4),
+        new ("5", 5),
+        new ("6", 6),
+        new ("7", 7),
+        new ("8", 8),
+        new ("9", 9)
     };
 
     public static int[] GetDigits(this string str)
     {
         str = str.Trim().ToLower();
-        List<int> digits = new List<int>();
-        Regex rx = new Regex(digitRegex);
-        MatchCollection matches = rx.Matches(str);
+        var digits = new List<int>();
+        var rx = DigitRegex();
+        var matches = rx.Matches(str);
 
         foreach (Match match in matches)
         {
-            KeyValuePair<string, int> digitKeyValuePair = digitsMappingList.Where(x => x.Key == match.Groups[1].Value).FirstOrDefault();
+            var digitKeyValuePair = 
+                DigitsMappingList.FirstOrDefault(x => x.Key == match.Groups[1].Value);
             digits.Add(digitKeyValuePair.Value);
         }
 
         return digits.ToArray();
     }
+
+    [GeneratedRegex("(?=(\\d|zero|one|two|three|four|five|six|seven|eight|nine))")]
+    private static partial Regex DigitRegex();
 }
