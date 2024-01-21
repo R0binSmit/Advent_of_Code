@@ -12,8 +12,8 @@ public static class Program
 
     private static IEnumerable<string> GetInputFileContent()
     {
-        var inputFilePaht = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "input.txt");
-        return File.ReadAllLines(inputFilePaht);
+        var inputFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "input.txt");
+        return File.ReadAllLines(inputFilePath);
     }
 
     public static int GetCalibrationValue(IEnumerable<string> inputFileContent)

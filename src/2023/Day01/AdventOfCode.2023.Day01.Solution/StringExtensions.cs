@@ -39,7 +39,7 @@ public static partial class StringExtensions
         foreach (Match match in matches)
         {
             var digitKeyValuePair = 
-                DigitsMappingList.FirstOrDefault(x => x.Key == match.Groups[1].Value);
+                DigitsMappingList.Find(x => x.Key == match.Groups[1].Value);
             digits.Add(digitKeyValuePair.Value);
         }
 
